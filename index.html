@@ -64,28 +64,21 @@
 </table>
 
 <script>
+ const casas = document.getElementsByClassName("casa");
 
-/* exemplo de código
-const casas = document.getElementsByClassName("casa");
-const peca = document.createElement('img');
-peca.setAttribute('src', 'chess_assets/bispo_b.png');
-peca.setAttribute('height', 60); // 👈️ height in px
-peca.setAttribute('width', 60); // 👈️ width in px
-casas[63].appendChild(peca);
-*/
+ function posicionaPeca(nome, cor, posicao) {
+    const peca = document.createElement('img');
+    peca.setAttribute('src', 'chess_assets/'+nome+'_'+cor+'.png');
+    peca.setAttribute('height', 60); // 👈️ height in px
+    peca.setAttribute('width', 60); // 👈️ width in px
+    casas[posicao].appendChild(peca);
+
+ }
+
+posicionaPeca ('bispo', 'b', 10)
 
 /* tarefas: 
 criar as funções:
-
-posicionaPeca
-receberá 4 parametros:
--- nome da peça
--- cor da peça
--- linha
--- coluna
-Esta função criará a peça especificada na casa correta. ex. a posição (linha 1, coluna 1) colocara a peça em casas[0];
-a posição (linha 1, coluna 8) colocara a peça em casas[7]
-a posição (linha 8, coluna 8) colocara a peça em casas[63]
 
 montaTabuleiro 
 receberá 1 parametro:
