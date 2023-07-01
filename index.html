@@ -1,0 +1,113 @@
+<html>
+<head>
+    <style>
+        table {
+            border-spacing:0px;
+        }
+        .casa { 
+            height: 60px;
+            width: 60px;
+            margin:0px;
+            padding: 0px;
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover; /* Resize the background image to cover the entire container */
+        }
+        .casa.preta {
+            background-image: url("chess_assets/blackwood.png");
+        }
+        .casa.preta:hover {
+            background-image: url("chess_assets/blackwood_azul.png");
+        }
+        .casa.branca {
+            background-image: url("chess_assets/whitewood.png");
+        }
+        .casa.branca:hover {
+            background-image: url("chess_assets/whitewood_azul.png");
+        }
+    </style>
+
+</head>
+<body>
+<table>
+    <tr>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+    </tr>
+    <tr>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+    </tr>
+    <tr>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+    </tr>
+    <tr>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+    </tr>
+    <tr>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+    </tr>
+    <tr>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+    </tr>
+    <tr>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+        <td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td>
+    </tr>
+    <tr>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+    </tr>
+</table>
+
+<script>
+
+/* exemplo de código
+const casas = document.getElementsByClassName("casa");
+const peca = document.createElement('img');
+peca.setAttribute('src', 'chess_assets/bispo_b.png');
+peca.setAttribute('height', 60); // 👈️ height in px
+peca.setAttribute('width', 60); // 👈️ width in px
+casas[63].appendChild(peca);
+*/
+
+/* tarefas: 
+criar as funções:
+
+posicionaPeca
+receberá 4 parametros:
+-- nome da peça
+-- cor da peça
+-- linha
+-- coluna
+Esta função criará a peça especificada na casa correta. ex. a posição (linha 1, coluna 1) colocara a peça em casas[0];
+a posição (linha 1, coluna 8) colocara a peça em casas[7]
+a posição (linha 8, coluna 8) colocara a peça em casas[63]
+
+montaTabuleiro 
+receberá 1 parametro:
+string de 64 posições com a seguinte codificação:
+- a posição na string significa a casa. ou seja, 1a posição ->casas[0]; última posição->casas[63]
+- espaço em branco - casa vazia
+- caracter minúsculo - peça branca
+- caracter maiúsculo - peça preta
+- (p,P) - Peão
+- (c,C) - Cavalo
+- (b,B) - Bispo
+- (r,R) - Rei
+- (d,D) - Rainha (dama)
+- (t,T) - Torre
+Então a string "TCBDRBCTPPPPPPPP                                pppppppptcbdrbct" representa o tabuleiro de abertura de um jogo.
+
+
+*/ 
+
+
+
+</script>
+    
+</body>
+</html>
