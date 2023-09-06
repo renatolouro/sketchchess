@@ -59,7 +59,7 @@
     </tr>
     <tr>
         <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
-        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca" onclick="clicktrigger ()"></td>
     </tr>
 </table>
 
@@ -71,6 +71,7 @@
     peca.setAttribute('src', 'chess_assets/'+nome+'_'+cor+'.png');
     peca.setAttribute('height', 60); // 👈️ height in px
     peca.setAttribute('width', 60); // 👈️ width in px
+    casas[posicao].innerHTML = "" 
     casas[posicao].appendChild(peca);
 
  }
@@ -101,7 +102,10 @@
 
  montaTabuleiro ("TCBDRBCTPPPPPPPP                                pppppppptcbdrbct")
 
+function clicktrigger () {
+    alert ("FUICLICADO")
 
+}
 /* tarefas: 
 criar as funções:
 
