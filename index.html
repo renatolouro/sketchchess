@@ -59,7 +59,7 @@
     </tr>
     <tr>
         <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
-        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca" onclick="clicktrigger ()"></td>
+        <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
     </tr>
 </table>
 
@@ -78,7 +78,7 @@
 
  function montaTabuleiro (tabu){
     a = Array.from (tabu);
-    for (i=0;i<=63;i++){
+    for (var i=0;i<=63;i++){
 
         switch (a[i]){
             case "p":posicionaPeca ('peao'  , 'b', i);break;
@@ -97,13 +97,35 @@
         }
 
     }
-
  }
+var movimentoJaComecou =false
+var posinicial=-1
 
- montaTabuleiro ("TCBDRBCTPPPPPPPP                                pppppppptcbdrbct")
+function clicktrigger (pos) {
+    
+    
 
-function clicktrigger () {
-    alert ("FUICLICADO")
+    if(movimentoJaComecou) {
+        console.log('Movendo de pos '+posinicial+ ' ate a posicao final:' + pos)
+        movimentoJaComecou = false
+
+    } else {
+        console.log('Inicio do movimento da pos:' + pos)
+        posinicial = pos
+        movimentoJaComecou = true
+    }
+    /*
+       se movimentoJaComecou entao
+            o innerhtml da casa da posicao de agora recebe o innerhtml da casa da posicao inicial
+    */
+
+
+}
+
+montaTabuleiro ("TCBDRBCTPPPPPPPP                                pppppppptcbdrbct")
+
+for (i=0;i<=63;i++){
+    casas[i].setAttribute("onclick","clicktrigger (" + i + ")") 
 
 }
 /* tarefas: 
