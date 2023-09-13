@@ -107,9 +107,17 @@ function clicktrigger (pos) {
 
     if(movimentoJaComecou) {
         console.log('Movendo de pos '+posinicial+ ' ate a posicao final:' + pos)
+        casas[pos].innerHTML = casas[posinicial].innerHTML
         movimentoJaComecou = false
-
+        if (pos != posinicial) {
+        casas[posinicial].innerHTML = ""}
     } else {
+
+        if (casas[pos].innerHTML == "") {
+
+        return
+
+        }
         console.log('Inicio do movimento da pos:' + pos)
         posinicial = pos
         movimentoJaComecou = true
