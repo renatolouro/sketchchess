@@ -23,7 +23,16 @@
         }
         .casa.branca:hover {
             background-image: url("chess_assets/whitewood_azul.png");
+            
         }
+        .toolbar { 
+            height : 50;
+             width : 50; 
+
+                position: absolute;
+                 top: 10px;
+                  left: 500px;      
+            }            
     </style>
 
 </head>
@@ -62,7 +71,7 @@
         <td class="casa preta"></td><td class="casa branca"></td><td class="casa preta"></td><td class="casa branca"></td>
     </tr>
 </table>
-
+<div class = "toolbar"><img src="./icons/eraser.png" alt="borracha" width="25" height="35"></div>
 <script>
  const casas = document.getElementsByClassName("casa");
 
