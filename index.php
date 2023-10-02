@@ -1,3 +1,38 @@
+<?php
+if($_GET["codigo"]=="")
+    die("É necessário definir uma sala de jogo para continuar");
+
+
+function montaSqlEncontraTabuleiro ($cdg) {
+    return "SELECT tabuleiro FROM jogos where codigo = '".$cdg."'";
+
+}
+
+function montaSqlCriaNovoJogo($cdg) {
+    return "INSERT INTO jogos (codigo, tabuleiro) VALUES('".$cdg."', 'TCBDRBCTPPPPPPPP                                pppppppptcbdrbct')";
+}
+
+$mysqli = new mysqli("localhost", "root", "", "xadrez");
+
+$sqlEncontraTabuleiro = montaSqlEncontraTabuleiro($_GET["codigo"]);
+
+$result = $mysqli->query($sqlEncontraTabuleiro);
+
+$row = $result->fetch_row();
+
+
+if(!$row) {
+    $sqlNovoJogo = montaSqlCriaNovoJogo($_GET["codigo"]);
+    $mysqli->query($sqlNovoJogo);
+    $result = $mysqli->query($sqlEncontraTabuleiro);
+    $row = $result->fetch_row();
+}
+
+$tabuleiro = $row[0]
+
+?>
+
+
 <html>
 <head>
     <style>
@@ -139,7 +174,7 @@ function clicktrigger (pos) {
 
 }
 
-montaTabuleiro ("TCBDRBCTPPPPPPPP                                pppppppptcbdrbct")
+montaTabuleiro ("<?php echo($tabuleiro) ?>")
 
 for (i=0;i<=63;i++){
     casas[i].setAttribute("onclick","clicktrigger (" + i + ")") 
